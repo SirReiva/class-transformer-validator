@@ -227,7 +227,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, sampleUser);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.have.lengthOf(1);
       expect(error[0]).to.be.instanceOf(ValidationError);
     }
@@ -242,7 +242,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, userJson);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.have.lengthOf(1);
       expect(error[0]).to.be.instanceOf(ValidationError);
     }
@@ -257,7 +257,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, users);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.have.lengthOf(users.length);
       expect(error[0]).to.have.lengthOf(1);
       expect(error[0][0]).to.be.instanceOf(ValidationError);
@@ -279,7 +279,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, 2 as any);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.exist;
       expect(error.message).to.equals(rejectMessage);
     }
@@ -291,7 +291,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, func);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.exist;
       expect(error.message).to.equals(rejectMessage);
     }
@@ -301,7 +301,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, true as any);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.exist;
       expect(error.message).to.equals(rejectMessage);
     }
@@ -311,7 +311,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, null as any);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.exist;
       expect(error.message).to.equals(rejectMessage);
     }
@@ -321,7 +321,7 @@ describe("transformAndValidateSync()", () => {
     try {
       transformAndValidateSync(User, void 0 as any);
       throw new Error("error should be thrown");
-    } catch (error) {
+    } catch (error: any) {
       expect(error).to.exist;
       expect(error.message).to.equals(rejectMessage);
     }
